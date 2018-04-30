@@ -14,6 +14,11 @@ public class DespesaControler {
 	@Autowired
 	private DespesaRepository despesa;
 	
+	@RequestMapping
+	public String home() {
+		return "CadastroDespesa";
+	}
+	
 	@RequestMapping("/novo")
 	public String novo() {
 		return "CadastroDespesa";
