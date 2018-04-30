@@ -1,4 +1,4 @@
-package com.financas.nido.financeiro;
+package com.financas;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

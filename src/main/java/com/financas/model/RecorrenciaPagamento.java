@@ -1,4 +1,4 @@
-package com.financas.nido.financeiro.model;
+package com.financas.model;
 
 public enum RecorrenciaPagamento {
 

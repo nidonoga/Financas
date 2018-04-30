@@ -1,4 +1,4 @@
-package com.financas.nido.financeiro;
+package com.financas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
