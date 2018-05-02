@@ -1,6 +1,7 @@
 package com.financas.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -41,14 +42,15 @@ public class Despesa implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private RecorrenciaPagamento recorrencia;
 	
+	private BigDecimal valorTotalDespesa;
+	
 	@OneToMany(mappedBy = "despesa")
-	private  List<DespesaValor> despesaValor;
-
+	private List<Pagamento> listaPagamento;
 
 	public Long getCodigo() {
 		return codigo;
 	}
-
+	
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
@@ -113,15 +115,26 @@ public class Despesa implements Serializable {
 	public void setRecorrencia(RecorrenciaPagamento recorrencia) {
 		this.recorrencia = recorrencia;
 	}
-	
-	public List<DespesaValor> getDespesaValor() {
-		return despesaValor;
+
+	public BigDecimal getValorTotalDespesa() {
+		return valorTotalDespesa;
 	}
-	
-	
-	public void setDespesaValor(List<DespesaValor> despesaValor) {
-		this.despesaValor = despesaValor;
+
+
+	public void setValorTotalDespesa(BigDecimal valorTotalDespesa) {
+		this.valorTotalDespesa = valorTotalDespesa;
 	}
+
+
+	public List<Pagamento> getListaPagamento() {
+		return listaPagamento;
+	}
+
+
+	public void setListaPagamento(List<Pagamento> listaPagamento) {
+		this.listaPagamento = listaPagamento;
+	}
+
 
 	@Override
 	public int hashCode() {
