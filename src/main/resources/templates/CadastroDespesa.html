@@ -67,10 +67,7 @@
 					<label for="recorrencia" class="col-sm-2 control-label">Status</label>
 					<div class="col-sm-2">
 						<select class="form-control" name="recorrencia">
-							<option value="DIARIA">Diária</option>
-							<option value="SEMANAL">Semanal</option>
-							<option value="MENSAL">Mensal</option>
-							<option value="ANUAL">Anual</option>
+							<option th:each="recorrencia : ${todasRecorrenciasPagamento}" th:value="${recorrencia}" th:text="${recorrencia.descricao}"></option>
                     	</select>
                     </div>
 				</div>
@@ -92,6 +89,6 @@
 
 
 
-<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

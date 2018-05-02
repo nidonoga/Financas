@@ -2,19 +2,19 @@ package com.financas.model;
 
 public enum RecorrenciaPagamento {
 
-		DIARIA("Di\\00E1 ria"),
+		DIARIA("Diária"),
 		SEMANAL("Semanal"),
 		MENSAL("Mensal"),
 		ANUAL("Anual");
 		
-	private String recorrencia;
+	private String descricao;
 	
 	
-	RecorrenciaPagamento(String recorrencia) {
-		this.recorrencia = recorrencia;
+	RecorrenciaPagamento(String descricao) {
+		this.descricao = descricao;
 	}
 	
-	public String getRecorrencia() {
-		return recorrencia;
+	public String getDescricao() {
+		return descricao;
 	}
 }
