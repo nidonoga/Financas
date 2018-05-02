@@ -21,7 +21,7 @@ public class DespesaControler {
 		return "CadastroDespesa";
 	}
 	
-	@RequestMapping(value = "/novo", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public String criar(Despesa novaDespesa) {
 		despesa.save(novaDespesa);
 		return "CadastroDespesa";
