@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.financas.model.Despesa;
 import com.financas.repository.DespesaRepository;
@@ -22,9 +23,12 @@ public class DespesaControler {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String criar(Despesa novaDespesa) {
+	public ModelAndView criar(Despesa novaDespesa) {
 		despesa.save(novaDespesa);
-		return "CadastroDespesa";
+		
+		ModelAndView mv = new ModelAndView("CadastroDespesa");
+		mv.addObject("mensagem", "Salvo com sucesso!");
+		return mv;
 	}
 
 }
