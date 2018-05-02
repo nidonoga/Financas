@@ -13,6 +13,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 @Entity
 @Table(name = "pagamento")
 public class Pagamento {
@@ -21,10 +24,12 @@ public class Pagamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigoPagamento;
 	
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valorPago;
 	
 	private String comprovante;
 	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataPagamento;
 	

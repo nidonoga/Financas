@@ -16,6 +16,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 @Entity
 @Table(name = "despesa")
 public class Despesa implements Serializable {
@@ -30,18 +33,22 @@ public class Despesa implements Serializable {
 	
 	private String descricao;
 	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataInclusao;
 	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataInicial;
 	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataFinal;
 	
 	@Enumerated(EnumType.STRING)
 	private RecorrenciaPagamento recorrencia;
 	
+	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valorTotalDespesa;
 	
 	@OneToMany(mappedBy = "despesa")

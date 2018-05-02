@@ -16,7 +16,7 @@ public class DespesaControler {
 	private DespesaRepository despesa;
 	
 	
-	@RequestMapping("/novo")
+	@RequestMapping
 	public String novo() {
 		return "CadastroDespesa";
 	}
