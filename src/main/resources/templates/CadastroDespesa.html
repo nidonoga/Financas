@@ -1,94 +1,67 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8"/>
-<title>Cadastro Despesa</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="/css/style.css"/>
-</head>
-<body>
+<html 	xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    	layout:decorator="LayoutPadrao">
 
-	<nav class="navbar navbar-inverse navbar-static-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="/despesa">
-	        <img class="custom-logo" alt="LogoTestes" src="/images/logo.png" />
-	      </a>
-	    </div>
-	  </div>
-	</nav>
+	<section layout:fragment="conteudo">
 
-
-
-    <form class="form-horizontal" method="POST" action="/despesa">
-    
-    	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
-    		<span th:text="${mensagem}"></span>
-    	</div>
-    
-    
-    	<div class="panel panel-default">
-    		<div class="panel-heading">
-    			<h1 class="panel-title">Nova Despesa</h1>
-    		</div>
-    		
-    		<div class="panel-body">
-    			<div class="form-group">
-					<label for="nome" class="col-sm-2 control-label">Nome</label>
-					<div class="col-sm-4"> 
-						<input type="text" class="form-control" id="nome" name="nome"/>
+	    <form class="form-horizontal" method="POST" action="/despesa">
+	    	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+	    		<span th:text="${mensagem}"></span>
+	    	</div>
+	    
+	    	<div class="panel panel-default">
+	    		<div class="panel-heading">
+	    			<h1 class="panel-title">Nova Despesa</h1>
+	    		</div>
+	    		
+	    		<div class="panel-body">
+	    			<div class="form-group">
+						<label for="nome" class="col-sm-2 control-label">Nome</label>
+						<div class="col-sm-4"> 
+							<input type="text" class="form-control" id="nome" name="nome"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+						<div class="col-sm-4"> 
+							<input type="text" class="form-control" id="descricao" name="descricao"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dataInicial" class="col-sm-2 control-label">Data inicial</label>
+						<div class="col-sm-2">  
+							<input type="text" class="form-control"	id="dataInicial" name="dataInicial"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dataFinal" class="col-sm-2 control-label">Data final</label>
+						<div class="col-sm-2">  
+							<input type="text" class="form-control"	id="dataFinal" name="dataFinal"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="valorDespesa" class="col-sm-2 control-label">Valor</label>
+						<div class="col-sm-2">   
+							<input type="text" class="form-control" id="valorTotalDespesa" name="valorTotalDespesa"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="recorrencia" class="col-sm-2 control-label">Status</label>
+						<div class="col-sm-2">
+							<select class="form-control" name="recorrencia">
+								<option th:each="recorrencia : ${todasRecorrenciasPagamento}" th:value="${recorrencia}" th:text="${recorrencia.descricao}"></option>
+	                    	</select>
+	                    </div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-primary pull-right">Salvar</button>
+						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
-					<div class="col-sm-4"> 
-						<input type="text" class="form-control" id="descricao" name="descricao"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="dataInicial" class="col-sm-2 control-label">Data inicial</label>
-					<div class="col-sm-2">  
-						<input type="text" class="form-control"	id="dataInicial" name="dataInicial"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="dataFinal" class="col-sm-2 control-label">Data final</label>
-					<div class="col-sm-2">  
-						<input type="text" class="form-control"	id="dataFinal" name="dataFinal"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="valorDespesa" class="col-sm-2 control-label">Valor</label>
-					<div class="col-sm-2">   
-						<input type="text" class="form-control" id="valorTotalDespesa" name="valorTotalDespesa"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="recorrencia" class="col-sm-2 control-label">Status</label>
-					<div class="col-sm-2">
-						<select class="form-control" name="recorrencia">
-							<option th:each="recorrencia : ${todasRecorrenciasPagamento}" th:value="${recorrencia}" th:text="${recorrencia.descricao}"></option>
-                    	</select>
-                    </div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary pull-right">Salvar</button>
-					</div>
-				</div>
-			</div>
-    	</div>
-    </form>
-
-
-
-
-
-
-
-
-
-
-	<script src="/js/bootstrap.min.js"></script>
-</body>
+	    	</div>
+	    </form>
+	</section>
 </html>
