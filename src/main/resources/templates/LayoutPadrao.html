@@ -3,19 +3,31 @@
     	xmlns:th="http://www.thymeleaf.org"
     	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     
+
 <head>
 	<meta charset="UTF-8"/>
-	<title>Cobrança</title>
+	<title>Financeiro</title>
+	
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link href="/css/metisMenu.min.css" rel="stylesheet"/>
+    <link href="/css/sb-admin-2.css" rel="stylesheet"/>
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
+	<div id="wrapper">
 	
-	<header layout:include="Cabecalho" ></header>
-	<section layout:fragment="conteudo"></section>
+		<div id="defaultHeader" layout:include="DefaultHeader" ></div>
+	
+		<section layout:fragment="conteudo"></section>
+	
+	</div>
+	
 	
   	<script src="/js/jquery-3.3.1.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/metisMenu.min.js"></script>
+    <script src="/js/sb-admin-2.js"></script>
 </body>
 </html>

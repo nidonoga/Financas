@@ -24,7 +24,7 @@ public class DespesaControler {
 	
 	@RequestMapping
 	public ModelAndView novo() {
-		return new ModelAndView("CadastroDespesa");
+		return new ModelAndView("Teste");
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
