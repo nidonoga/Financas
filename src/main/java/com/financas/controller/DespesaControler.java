@@ -31,7 +31,7 @@ public class DespesaControler {
 	public ModelAndView criar(Despesa novaDespesa) {
 		despesa.save(novaDespesa);
 		
-		ModelAndView mv = new ModelAndView("CadastroDespesa");
+		ModelAndView mv = new ModelAndView("Teste");
 		mv.addObject("mensagem", "Salvo com sucesso!");
 		return mv;
 	}
