@@ -21,17 +21,16 @@ public class DespesaControler {
 	@Autowired
 	private DespesaRepository despesa;
 	
-	
 	@RequestMapping
 	public ModelAndView novo() {
-		return new ModelAndView("Teste");
+		return new ModelAndView("CadastroDespesa");
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView criar(Despesa novaDespesa) {
 		despesa.save(novaDespesa);
 		
-		ModelAndView mv = new ModelAndView("Teste");
+		ModelAndView mv = new ModelAndView("CadastroDespesa");
 		mv.addObject("mensagem", "Salvo com sucesso!");
 		return mv;
 	}
