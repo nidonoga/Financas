@@ -12,9 +12,9 @@
 		<!-- Page Content -->
 		<div id="page-wrapper">
 		
-				<div class="alert alert-success alert-dismissable">
+				<div class="alert alert-success alert-dismissable" th:if="${!#strings.isEmpty(mensagem)}">
 				    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				    Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+				    <span th:text="${mensagem}"></span> 
 				</div>
 			<!-- /.row -->
 			<div class="row">
@@ -41,10 +41,12 @@
 								</div>
 								<div class="row">
 									<div class="col-lg-6">
-									   	<div class="form-group">
-									        <label>Data inicial</label>
-									       	<input id="dataInicial" name="dataInicial" class="form-control" placeholder="Data Inicial"/>
-									   	</div>
+									   	<div class="input-group date" data-provide="datepicker">
+										    <input type="text" class="form-control"/>
+										    <div class="input-group-addon">
+										        <span class="glyphicon glyphicon-th"></span>
+										    </div>
+										</div>
 									</div>
 									<div class="col-lg-6">
 									   	<div class="form-group">
