@@ -4,7 +4,7 @@
     	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     	
 
-	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" th:fragment="navBar">
 		<!-- NavBar -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -14,9 +14,8 @@
 				<span class="icon-bar"></span>
 			</button>
 		    <a class="navbar-brand" href="index.html">Financeiro v1.0</a>
-		    
-		    
 		</div>
-            <div id="sideBar" layout:include="SideBar"></div>
-		</nav>
+		<div th:replace="/layout/SideBar :: sideBar"></div>
+		
+	</nav>
 </html>

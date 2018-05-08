@@ -1,4 +1,4 @@
 $(function() {
-	var decimal = $('.js-decimal');
-	decimal.maskMoney();
+	var decimal = $('.js-currency');
+	decimal.maskMoney({decimal: ',', thousands: '.', allowZero: false});
 });

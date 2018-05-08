@@ -13,12 +13,14 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/metisMenu.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/sb-admin-2.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}"/>
 </head>
 
 <body>
 	<div id="wrapper">
 	
-		<div id="defaultHeader" layout:include="DefaultHeader" ></div>
+		
+		<div th:replace="layout/NavBar :: navBar"></div>
 	
 		<section layout:fragment="conteudo"></section>
 	
@@ -30,6 +32,8 @@
     <script th:src="@{/js/vendors/metisMenu.min.js}"></script>
     <script th:src="@{/js/vendors/sb-admin-2.js}"></script>
     <script th:src="@{/js/vendors/jquery.maskMoney.min.js}"></script>
+    <script th:src="@{/js/vendors/bootstrap-datepicker.min.js}"></script>
+    <script th:src="@{/js/vendors/bootstrap-datepicker.pt-BR.min.js}"></script>
     <script th:src="@{/js/financeiro.js}"></script>
 </body>
 </html>
