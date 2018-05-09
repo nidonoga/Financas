@@ -33,17 +33,15 @@ public class Despesa implements Serializable {
 	
 	private String descricao;
 	
+	private Integer qtdParcelas;
+	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataInclusao;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
-	private Date dataInicial;
-	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
-	private Date dataFinal;
+	private Date dataVencimento;
 	
 	@Enumerated(EnumType.STRING)
 	private RecorrenciaPagamento recorrencia;
@@ -93,27 +91,6 @@ public class Despesa implements Serializable {
 		this.dataInclusao = dataInclusao;
 	}
 
-
-	public Date getDataInicial() {
-		return dataInicial;
-	}
-
-
-	public void setDataInicial(Date dataInicial) {
-		this.dataInicial = dataInicial;
-	}
-
-
-	public Date getDataFinal() {
-		return dataFinal;
-	}
-
-
-	public void setDataFinal(Date dataFinal) {
-		this.dataFinal = dataFinal;
-	}
-
-
 	public RecorrenciaPagamento getRecorrencia() {
 		return recorrencia;
 	}
@@ -140,6 +117,26 @@ public class Despesa implements Serializable {
 
 	public void setListaPagamento(List<Pagamento> listaPagamento) {
 		this.listaPagamento = listaPagamento;
+	}
+
+
+	public Integer getQtdParcelas() {
+		return qtdParcelas;
+	}
+
+
+	public void setQtdParcelas(Integer qtdParcelas) {
+		this.qtdParcelas = qtdParcelas;
+	}
+
+
+	public Date getDataVencimento() {
+		return dataVencimento;
+	}
+
+
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
 	}
 
 
